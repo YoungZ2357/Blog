@@ -10,15 +10,15 @@ Master of Science in Data Science @NEU · Coffee Geek
 
 ## Navigation
 
-**[Portfolio](/en/portfolio)** - View my projects
+**[Portfolio](/Blog/en/portfolio)** - View my projects
 
 
 
-**[Blogs](/en/blog/)** - My technical summary and daily sharing
+**[Blogs](/Blog/en/blog/)** - My technical summary and daily sharing
 
 
 
-**[Notes](/en/notes/)** - Learning Notes
+**[Notes](/Blog/en/notes/)** - Learning Notes
 
 ## Contact Me
 Always happy to chat, whether it's serious discussion or casual conversation!

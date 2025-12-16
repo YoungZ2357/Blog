@@ -1,120 +1,119 @@
-baseURL = 'https://youngz2357.github.io/Blog/' 
+baseURL = 'https://youngz2357.github.io/Blog/'
 languageCode = 'en-us'
-title = "Young's Blog"
+title = "Young's Portfolio & Blog"
 theme = "PaperMod"
 
 defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = true
+defaultContentLanguageInSubdir = false  
 
 [languages]
   [languages.en]
     languageName = "English"
     weight = 1
-    title = "Young's Blog"
+    title = "Young's Portfolio & Blog"
     
     [[languages.en.menu.main]]
       name = "Portfolio"
-      url = "/portfolio/"
+      url = "/Blog/portfolio/"
       weight = 1
     
     [[languages.en.menu.main]]
       name = "Blog"
-      url = "/blog/"
+      url = "/Blog/blog/" 
       weight = 2
     
     [[languages.en.menu.main]]
       name = "Notes"
-      url = "/notes/"
+      url = "/Blog/notes/" 
       weight = 3
     
     [[languages.en.menu.main]]
       name = "Supervised Learning"
       parent = "Notes"
-      url = "/notes/supervised/"
+      url = "/Blog/notes/supervised/"
       weight = 2
     
     [[languages.en.menu.main]]
       name = "Math Foundations"
       parent = "Notes"
-      url = "/notes/math-foundation/"
+      url = "/Blog/notes/math-foundation/"
       weight = 3
 
     [[languages.en.menu.main]]
       name = "Notes for Papers"
       parent = "Notes"
-      url = "/notes/paper-reading/"
+      url = "/Blog/notes/paper-reading/"
       weight = 4
     
     [[languages.en.menu.main]]
       name = "ML Theory"
       parent = "Math Foundations"
-      url = "/notes/math-foundation/ml-theory/"
+      url = "/Blog/notes/math-foundation/ml-theory/"
       weight = 1
     
     [[languages.en.menu.main]]
       name = "Optimization Theory"
       parent = "Math Foundations"
-      url = "/notes/math-foundation/optimization/"
+      url = "/Blog/notes/math-foundation/optimization/"
       weight = 2
     
     [[languages.en.menu.main]]
       name = "Resources"
-      url = "/resources/"
+      url = "/Blog/resources/"
       weight = 5
 
   [languages.zh]
     languageName = "中文"
     weight = 2
-    title = "Young的博客"
+    title = "Young的作品集与博客"
     
     [[languages.zh.menu.main]]
       name = "作品集"
-      url = "/portfolio/"
+      url = "/Blog/zh/portfolio/"  
       weight = 1
     
     [[languages.zh.menu.main]]
       name = "博客"
-      url = "/blog/" 
-      weight = 2
+      url = "/Blog/zh/blog/" 
     
     [[languages.zh.menu.main]]
       name = "笔记"
-      url = "/notes/" 
+      url = "/Blog/zh/notes/" 
       weight = 3
     
     [[languages.zh.menu.main]]
       name = "监督学习算法"
       parent = "笔记"
-      url = "/notes/supervised/" 
+      url = "/Blog/zh/notes/supervised/"
       weight = 2
     
     [[languages.zh.menu.main]]
       name = "数学基础"
       parent = "笔记"
-      url = "/notes/math-foundation/"
+      url = "/Blog/zh/notes/math-foundation/"
       weight = 3
 
     [[languages.zh.menu.main]]
       name = "论文阅读笔记"
       parent = "笔记"
-      url = "/notes/paper-reading/" 
+      url = "/Blog/zh/notes/paper-reading/"
       weight = 4
     
     [[languages.zh.menu.main]]
       name = "机器学习理论基础"
       parent = "数学基础"
-      url = "/notes/math-foundation/ml-theory/" 
+      url = "/Blog/zh/notes/math-foundation/ml-theory/"
       weight = 1
     
     [[languages.zh.menu.main]]
       name = "优化理论"
       parent = "数学基础"
-      url = "/notes/math-foundation/optimization/" 
+      url = "/Blog/zh/notes/math-foundation/optimization/"
       weight = 2
     
     [[languages.zh.menu.main]]
       name = "资源"
-      url = "/resources/" 
+      url = "/Blog/zh/resources/"
       weight = 5
 
 [params]

@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono/JetBrainsMono-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/jetbrains-mono/JetBrainsMono-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 应用到代码块 */
+code,
+pre,
+kbd,
+samp,
+tt {
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace !important;
+}
+
+:not(pre) > code {
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace !important;
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+pre code {
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace !important;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.highlight pre {
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace !important;
+}
+
+/* 启用连字 */
+code,
+pre code {
+  font-variant-ligatures: normal;
+  font-feature-settings: "liga" 1, "calt" 1;
+}

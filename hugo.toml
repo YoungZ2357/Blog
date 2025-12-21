@@ -21,6 +21,19 @@ defaultContentLanguageInSubdir = false
       name = "Blog"
       url = "blog/"  # 移除开头的 /
       weight = 2
+
+    [[languages.en.menu.main]]
+      name = "daily"
+      parent="Blog"
+      url = "blog/daily"
+      weight = 1
+
+
+    [[languages.en.menu.main]]
+      name = "inspiration"
+      parent="Blog"
+      url = "blog/inspiration"
+      weight = 3
     
     [[languages.en.menu.main]]
       name = "Notes"
@@ -59,7 +72,7 @@ defaultContentLanguageInSubdir = false
     
     [[languages.en.menu.main]]
       name = "Resources"
-      url = "resources/"  # 移除开头的 /
+      url = "resources/" 
       weight = 5
 
   [languages.zh]
@@ -69,17 +82,29 @@ defaultContentLanguageInSubdir = false
     
     [[languages.zh.menu.main]]
       name = "作品集"
-      url = "portfolio/"  # 移除 /zh/,只保留相对路径
+      url = "portfolio/" 
       weight = 1
     
     [[languages.zh.menu.main]]
       name = "博客"
-      url = "blog/"  # 移除 /zh/
+      url = "blog/"
       weight = 2
+
+    [[languages.zh.menu.main]]
+      name = "日常"
+      parent="博客"
+      url = "blog/daily"
+      weight = 1
+
+    [[languages.zh.menu.main]]
+      name = "点子"
+      parent="博客"
+      url = "blog/inspiration"
+      weight = 3
     
     [[languages.zh.menu.main]]
       name = "笔记"
-      url = "notes/"  # 移除 /zh/
+      url = "notes/" 
       weight = 3
     
     [[languages.zh.menu.main]]

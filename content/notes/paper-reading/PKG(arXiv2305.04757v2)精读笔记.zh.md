@@ -2,7 +2,7 @@
 title: "PKG论文精读笔记"
 date: 2025-12-15
 draft: false
-tags: ["RAG", "LLM", "Generate-Read"]
+tags: ["RAG", "LLM", "Generate-Read", "adapter"]
 categories: ["学习笔记"]
 ---
 

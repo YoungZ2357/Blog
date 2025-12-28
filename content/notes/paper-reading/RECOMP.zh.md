@@ -45,8 +45,8 @@ categories: ["学习笔记"]
 Extractive Compressor将问题定义为ranking问题，即直接将句子排序、拼接并预置。Extractive Compressor使用双编码器结构，通过嵌入句子，计算相似度来衡量语料对回答问题的有用程度。
 
 **推理过程**如下：
-```mermaid
 
+```mermaid
 flowchart LR
     subgraph A [输入预处理与编码]
         A1[“文档集D<br>（多篇文档）”] --> A2[“分句”]
@@ -107,7 +107,9 @@ $metric()$是距离度量。这五个句子作为负例和正例一同进行对�
 ### 2.3 Abstractive Compressor
 
 Abstractive Compressor将信息压缩直接定义为**生成问题**，它的推理过程与常见的编码器-解码器结构推理相似
+
 ```mermaid
+
 flowchart LR
     subgraph A [输入预处理]
         A1[“文档集D<br>（多篇文档拼接）”] --> A2[“与查询x拼接为<br>统一输入序列”]
@@ -135,6 +137,7 @@ flowchart LR
 
     A --> B --> C --> D
 ```
+
 该方法涉及大型模型使用，训练流程大致如下：
 
 >注意！目前主流的很多高性能模型（如Claude, ChatGPT等）都**禁止使用其输出进行模型蒸馏和训练其他生成式模型**！笔者不准备对这些厂商的模型产品使用，也不建议使用，推荐使用如DeepSeek、千问（开源版）等**明确允许蒸馏的开源模型**来实现！

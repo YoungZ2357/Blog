@@ -3,7 +3,7 @@ title: "梯度下降及其收敛性"
 date: 2025-12-11
 draft: false
 math: true
-tags: ["凸优化", "下降方法", "优化理论"]
+tags: ["凸优化", "下降方法", "优化理论", "无约束优化"]
 categories: ["学习笔记"]
 ---
 

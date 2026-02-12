@@ -142,6 +142,15 @@ defaultContentLanguageInSubdir = false
       url = "resources/"  # 移除 /zh/
       weight = 5
 
+[markup.goldmark.extensions.passthrough]
+  enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [['$$', '$$'], ['\[', '\]']]
+  inline = [['$', '$'], ['\(', '\)']]
+
+
+
 [params]
   defaultTheme = "auto"
   ShowCodeCopyButtons = true

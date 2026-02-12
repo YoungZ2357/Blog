@@ -6,6 +6,7 @@ created: "2026-01-20T10:46"
 updated: "2026-01-22T00:59"
 ---
 
+
 > 该笔记参考自如下内容：1) 教授Olga Vitek的课堂讲义；2)Pattern Recognition and Machine Learning - Christopher M. Bishop
 
 ## 1 预备知识
@@ -198,13 +199,13 @@ $$
 对于有周期性的数据，我们通常使用三角函数进行变换，以获取其时序特征。假如我们需要处理每日气温，我们可以定义**傅里叶基函数**：
 
 $$
-\begin{flalign}
+\begin{align}
 & \phi_0(x)=1 \ \ \texttt{this is a dummy} & \\\\
 & \phi_1(x) = \sin\left(\frac{2\pi x}{365}\right) \ \ \text{年周期正弦}& \\\\
 & \phi_2(x) = \cos\left(\frac{2\pi x}{365}\right) \ \ \text{年周期余弦}& \\\\
 & \phi_3(x) = \sin\left(\frac{4\pi x}{365}\right) \ \ \text{半年周期正弦}& \\\\
 & \phi_4(x) = \cos\left(\frac{4\pi x}{365}\right) \ \ \text{半年周期余弦}& 
-\end{flalign}
+\end{align}
 $$
 
 模型形式变化为：
@@ -219,12 +220,12 @@ $$
 修改基函数如下：
 
 $$
-\begin{flalign}
+\begin{align}
 & \phi_0(x)=1 \ \ \texttt{this is a dummy} & \\\\
 & \phi_1(x)=x \ \ \text{一次项} & \\\\
 & \phi_2(x)=x^2 \ \ \text{二次项} & \\\\
 & \phi_3(x)=x^3 \ \ \text{三次项} & \\\\
-\end{flalign}
+\end{align}
 $$
 
 模型形式变化为：
@@ -244,7 +245,7 @@ SINDy希望通过给定的动力系统观测数据 $ \{(\mathbf{x}_i, \mathbf{\d
 
 $$
 \Theta(\mathbf{x})
-=
+ =
 \left[
 1,\;
 x_1,\;
@@ -262,7 +263,7 @@ $$
 
 $$
 \dot{x}_k
-=
+ =
 \xi_{k,0} \cdot 1
 +
 \xi_{k,1} \cdot x_1
@@ -419,19 +420,19 @@ $$
 对于一元线性回归，我们通常直接求闭式解，即尝试寻找驻点。
 
 $$
-\begin{flalign}
+\begin{align}
 &\frac{\partial \text{RSS}}{\partial \theta_0} = -2\sum_{i=1}^{N}(y_i - \theta_0 - \theta_1 x_i)=0& \\\\
 &\frac{\partial \text{RSS}}{\partial \theta_1} = -2\sum_{i=1}^{N}(y_i - \theta_0 - \theta_1 x_i)x_i=0&
-\end{flalign}
+\end{align}
 $$
 
 该方程组的求解结果为：
 
 $$
-\begin{flalign}
+\begin{align}
 &\hat{\theta}_1 = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sum(x_i - \bar{x})^2}& \\\\
 &\hat{\theta}_0 = \bar{y} - \hat{\theta}_1\bar{x}&
-\end{flalign}
+\end{align}
 $$
 
 该求解结果也表明，回归线一定会经过点 $ (\bar{x}, \bar{y}) $

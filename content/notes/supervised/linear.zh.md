@@ -7,6 +7,7 @@ updated: "2026-01-22T00:59"
 ---
 
 
+
 > 该笔记参考自如下内容：1) 教授Olga Vitek的课堂讲义；2)Pattern Recognition and Machine Learning - Christopher M. Bishop
 
 ## 1 预备知识
@@ -132,9 +133,7 @@ $$
 对模型1的损失求偏导
 
 $$
-\frac{\partial}{\partial\theta_1}\sum_{i=1}^{n}(y_i-\theta_0-\theta_1x_i-\theta_2x_i^2)^2
-
- = 2\sum_{i=1}^n (y_i - \theta_0 - \theta_1 x_i)(-x_i)
+\frac{\partial}{\partial\theta_1}\sum_{i=1}^{n}(y_i-\theta_0-\theta_1x_i-\theta_2x_i^2)^2 = 2\sum_{i=1}^n (y_i - \theta_0 - \theta_1 x_i)(-x_i)
 $$
 
 $$
@@ -244,8 +243,7 @@ SINDy希望通过给定的动力系统观测数据 $ \{(\mathbf{x}_i, \mathbf{\d
 我们可以定义如下的候选函数集：
 
 $$
-\Theta(\mathbf{x})
- =
+\Theta(\mathbf{x}) =
 \left[
 1,\;
 x_1,\;
@@ -262,8 +260,7 @@ $$
 此时模型变化为：
 
 $$
-\dot{x}_k
- =
+\dot{x}_k =
 \xi_{k,0} \cdot 1
 +
 \xi_{k,1} \cdot x_1

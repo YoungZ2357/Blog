@@ -146,7 +146,6 @@ $$
 
 $$
 \frac{\partial}{\partial\theta_1}\sum_{i=1}^{n}(y_i - \theta_0 - \theta_1^2 x_i)^2 = 
-
 2\sum_{i=1}^n (y_i - \theta_0 - \theta_1^2 x_i)(-2\theta_1 x_i)
 $$
 
@@ -356,13 +355,9 @@ $$
 $$
 \begin{align}
 p(y_1, \cdots, y_N|x_1, \cdots, x_N;\pmb\theta) &= \prod \limits_{i=0}^Np(y_i|x_i;\theta) \\\\
-
 &=\prod \limits_{i=0}^N \frac{1}{\sqrt{2\pi\sigma^2}} \cdot \exp\left\{          -\frac{(y_i-\theta_0-\theta_1 x_i)^2}{2\sigma^2}    \right\} \\\\
-
 &=\left(\frac{1}{\sqrt{2\pi\sigma^2}}\right)^N \cdot \exp \left\{
-
 -\frac{1}{2\sigma^2}\sum_{i=1}^N(y_i-\theta_0-\theta_1x_i)^2
-
 \right\}
 \end{align}
 $$
@@ -455,9 +450,7 @@ $$
 $$
 \begin{align}
 \frac{\partial \text{RSS}}{\partial \boldsymbol{\theta}} = -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\boldsymbol{\theta} &= 0 \\\\
-
    2\mathbf{X}^T\mathbf{X}\boldsymbol{\theta} &= 2\mathbf{X}^T\mathbf{y}\\\\
-	
 \end{align}
 $$
 
@@ -496,7 +489,6 @@ $$
 \begin{align}
 -\ln\mathcal{L}(\pmb\theta, y) &= + (\frac{N}{2}\ln(2\pi\sigma^2)
 -\frac{1}{2\sigma^2}\sum_{i=1}^N(y_i-\theta_0-\theta_1x_i)^2)
-
 \\\\
 &=\frac{N}{2}\ln(2\pi\sigma^2)
 +\frac{1}{2\sigma^2}\sum_{i=1}^N(y_i-\theta_0-\theta_1x_i)^2
@@ -553,7 +545,6 @@ $$
 \begin{align}
 \boldsymbol{\hat{\theta}} &= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T 
 \mathbf{X} \boldsymbol{\theta} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \varepsilon \\\\
-
 &=\boxed{\boldsymbol{\theta} + (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \varepsilon}
 \end{align}
 $$
@@ -588,11 +579,9 @@ $$
 $$
 \begin{align}
 E[(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \varepsilon|\mathbf{X}] &=
-
 (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^TE[\varepsilon|\mathbf{X}]\\\\
  &= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T \cdot 0 \\\\
  &= 0
-
 \end{align}
 $$
 

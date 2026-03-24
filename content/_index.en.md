@@ -4,7 +4,7 @@ title: "main page"
 
 # Young
 
-Master of Science in Data Science @NEU · Coffee Geek
+Master of Science in Data Science @NEU
 
 
 

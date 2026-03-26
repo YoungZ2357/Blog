@@ -13,67 +13,39 @@ defaultContentLanguageInSubdir = false
     title = "Young's Blog"
     
     [[languages.en.menu.main]]
-      name = "Portfolio"
-      url = "portfolio/"  # 移除开头的 /
-      weight = 1
-    
-    [[languages.en.menu.main]]
-      name = "Blog"
-      url = "blog/"  # 移除开头的 /
-      weight = 2
-
-    [[languages.en.menu.main]]
-      name = "daily"
-      parent="Blog"
-      url = "blog/daily"
-      weight = 1
-
-
-    [[languages.en.menu.main]]
-      name = "inspiration"
-      parent="Blog"
-      url = "blog/inspiration"
+      name = "Technical Writing"
+      url = "notes/"
       weight = 3
-    
-    [[languages.en.menu.main]]
-      name = "Notes"
-      url = "notes/"  # 移除开头的 /
-      weight = 3
-    
+
     [[languages.en.menu.main]]
       name = "Supervised Learning"
-      parent = "Notes"
-      url = "notes/supervised/"  # 移除开头的 /
+      parent = "Technical Writing"
+      url = "notes/supervised/"
       weight = 2
-    
+
     [[languages.en.menu.main]]
       name = "Math Foundations"
-      parent = "Notes"
-      url = "notes/math-foundation/"  # 移除开头的 /
+      parent = "Technical Writing"
+      url = "notes/math-foundation/"
       weight = 3
 
     [[languages.en.menu.main]]
       name = "Notes for Papers"
-      parent = "Notes"
-      url = "notes/paper-reading/"  # 移除开头的 /
+      parent = "Technical Writing"
+      url = "notes/paper-reading/"
       weight = 4
-    
+
     [[languages.en.menu.main]]
       name = "ML Theory"
       parent = "Math Foundations"
-      url = "notes/math-foundation/ml-theory/"  # 移除开头的 /
+      url = "notes/math-foundation/ml-theory/"
       weight = 1
-    
+
     [[languages.en.menu.main]]
       name = "Optimization Theory"
       parent = "Math Foundations"
-      url = "notes/math-foundation/optimization/"  # 移除开头的 /
+      url = "notes/math-foundation/optimization/"
       weight = 2
-    
-    [[languages.en.menu.main]]
-      name = "Resources"
-      url = "resources/" 
-      weight = 5
 
   [languages.zh]
     languageName = "中文"
@@ -81,66 +53,39 @@ defaultContentLanguageInSubdir = false
     title = "Young的博客"
     
     [[languages.zh.menu.main]]
-      name = "作品集"
-      url = "portfolio/" 
-      weight = 1
-    
-    [[languages.zh.menu.main]]
-      name = "博客"
-      url = "blog/"
-      weight = 2
-
-    [[languages.zh.menu.main]]
-      name = "日常"
-      parent="博客"
-      url = "blog/daily"
-      weight = 1
-
-    [[languages.zh.menu.main]]
-      name = "点子"
-      parent="博客"
-      url = "blog/inspiration"
+      name = "技术写作"
+      url = "notes/"
       weight = 3
-    
-    [[languages.zh.menu.main]]
-      name = "笔记"
-      url = "notes/" 
-      weight = 3
-    
+
     [[languages.zh.menu.main]]
       name = "监督学习算法"
-      parent = "笔记"
+      parent = "技术写作"
       url = "notes/supervised/"  # 移除 /zh/
       weight = 2
-    
+
     [[languages.zh.menu.main]]
       name = "数学基础"
-      parent = "笔记"
+      parent = "技术写作"
       url = "notes/math-foundation/"  # 移除 /zh/
       weight = 3
 
     [[languages.zh.menu.main]]
       name = "论文阅读笔记"
-      parent = "笔记"
+      parent = "技术写作"
       url = "notes/paper-reading/"  # 移除 /zh/
       weight = 4
-    
+
     [[languages.zh.menu.main]]
       name = "机器学习理论基础"
       parent = "数学基础"
       url = "notes/math-foundation/ml-theory/"  # 移除 /zh/
       weight = 1
-    
+
     [[languages.zh.menu.main]]
       name = "优化理论"
       parent = "数学基础"
       url = "notes/math-foundation/optimization/"  # 移除 /zh/
       weight = 2
-    
-    [[languages.zh.menu.main]]
-      name = "资源"
-      url = "resources/"  # 移除 /zh/
-      weight = 5
 
 [markup.goldmark.extensions.passthrough]
   enable = true

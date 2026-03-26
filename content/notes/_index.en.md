@@ -1,4 +1,4 @@
 ---
-title: "Notes"
+title: "Technical Writing"
 layout: "section"
 ---

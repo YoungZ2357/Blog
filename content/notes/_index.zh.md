@@ -1,4 +1,4 @@
 ---
-title: "个人笔记"
+title: "技术写作"
 layout: "section"
 ---

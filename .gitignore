@@ -20,4 +20,5 @@ Thumbs.db
 *.tmp
 *.bak
 *.html
-/public
+
+public

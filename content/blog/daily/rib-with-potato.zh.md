@@ -3,6 +3,7 @@ title: "川式土豆烧排骨家常作法"
 date: 2026-05-06
 draft: false
 tags: ["肉类", "炒菜"]
+mermaid: true
 categories: ["烹饪"]
 ---
 

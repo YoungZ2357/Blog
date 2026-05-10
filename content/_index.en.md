@@ -10,13 +10,9 @@ Master of Science in Data Science @NEU
 
 ## Navigation
 
-
-
-**[Blogs](/Blog/blog/)** - My technical summary and daily sharing
-
-
-
 **[Notes](/Blog/notes/)** - Learning Notes
+
+**[Ideas](/Blog/ideas/)** - Project ideas & workflows
 
 ## Contact Me
 Always happy to chat, whether it's serious discussion or casual conversation!

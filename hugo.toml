@@ -36,6 +36,11 @@ defaultContentLanguageInSubdir = false
       weight = 4
 
     [[languages.en.menu.main]]
+      name = "Ideas"
+      url = "ideas/"
+      weight = 4
+
+    [[languages.en.menu.main]]
       name = "ML Theory"
       parent = "Math Foundations"
       url = "notes/math-foundation/ml-theory/"
@@ -76,6 +81,11 @@ defaultContentLanguageInSubdir = false
       weight = 4
 
     [[languages.zh.menu.main]]
+      name = "想法"
+      url = "ideas/"
+      weight = 4
+
+    [[languages.zh.menu.main]]
       name = "机器学习理论基础"
       parent = "数学基础"
       url = "notes/math-foundation/ml-theory/"  # 移除 /zh/
@@ -97,6 +107,7 @@ defaultContentLanguageInSubdir = false
 
 
 [params]
+  mainSections = []
   defaultTheme = "auto"
   ShowCodeCopyButtons = true
   ShowReadingTime = true

@@ -1,0 +1,13 @@
+{{- if .IsHome }}
+<template id="daily-link-template">
+  {{- if eq .Language.Lang "zh" }}
+  <p id="daily-section-link" style="opacity:0;transition:opacity 0.6s ease;">
+    <strong><a href="/Blog/zh/blog/">日常</a></strong> - 生活随记
+  </p>
+  {{- else }}
+  <p id="daily-section-link" style="opacity:0;transition:opacity 0.6s ease;">
+    <strong><a href="/Blog/blog/">Blog</a></strong> - Life journal
+  </p>
+  {{- end }}
+</template>
+{{- end }}

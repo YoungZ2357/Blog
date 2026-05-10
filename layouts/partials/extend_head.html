@@ -37,3 +37,60 @@
     mermaid.initialize({ startOnLoad: true });
 </script>
 {{- end }}
+
+<!-- Konami / Blog unlock -->
+<script>
+(function () {
+    var SEQ = 'qingyang';
+    var LSKEY = 'daily_unlocked';
+
+    function showBlogLink() {
+        if (document.getElementById('daily-section-link')) {
+            document.getElementById('daily-section-link').style.opacity = '1';
+            return;
+        }
+        var tmpl = document.getElementById('daily-link-template');
+        if (!tmpl) return;
+        var content = document.querySelector('.post-content');
+        if (!content) return;
+        var node = tmpl.content.cloneNode(true);
+        content.appendChild(node);
+        setTimeout(function () {
+            var el = document.getElementById('daily-section-link');
+            if (el) el.style.opacity = '1';
+        }, 30);
+    }
+
+    function flashNotice(msg) {
+        var d = document.createElement('div');
+        d.textContent = msg;
+        d.style.cssText = 'position:fixed;top:1rem;right:1rem;padding:0.4rem 0.9rem;'
+            + 'background:#4caf50;color:#fff;border-radius:4px;z-index:9999;'
+            + 'font-size:0.85rem;transition:opacity 0.8s;';
+        document.body.appendChild(d);
+        setTimeout(function () { d.style.opacity = '0'; }, 1400);
+        setTimeout(function () { d.remove(); }, 2200);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        if (localStorage.getItem(LSKEY) === '1') showBlogLink();
+    });
+
+    var buf = '';
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            if (buf === SEQ) {
+                localStorage.setItem(LSKEY, '1');
+                showBlogLink();
+                flashNotice('✓ Unlocked');
+            }
+            buf = '';
+        } else if (/^[a-z]$/i.test(e.key)) {
+            buf += e.key.toLowerCase();
+            if (buf.length > SEQ.length) buf = buf.slice(buf.length - SEQ.length);
+        } else {
+            buf = '';
+        }
+    });
+})();
+</script>

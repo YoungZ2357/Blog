@@ -12,11 +12,16 @@ import hashlib
 import os
 import re
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
 MERMAID_RE = re.compile(r'```mermaid\n(.*?)```', re.DOTALL)
 SVG_DIR = Path("static/mermaid-svg")
+
+# On Windows, npm installs CLI tools as .cmd wrappers; bare "mmdc" is not found
+# by subprocess unless the shell is involved. Use mmdc.cmd directly on Windows.
+MMDC = ["mmdc.cmd"] if sys.platform == "win32" else ["mmdc"]
 
 
 def block_hash(body: str) -> str:
@@ -36,8 +41,7 @@ def render_svg(body: str, hash_str: str, theme: str) -> bool:
 
     try:
         result = subprocess.run(
-            [
-                "mmdc",
+            MMDC + [
                 "-i", tmp,
                 "-o", str(out),
                 "--configFile", f"scripts/mermaid-config-{theme}.json",

@@ -3,8 +3,8 @@
 {{- $lightFile := printf "static/mermaid-svg/%s-light.svg" $hash -}}
 {{- if fileExists $lightFile -}}
 <figure class="mermaid-figure">
-  <img class="mermaid-img mermaid-light" src="{{ printf "/mermaid-svg/%s-light.svg" $hash | absURL }}" alt="Mermaid diagram" loading="lazy">
-  <img class="mermaid-img mermaid-dark"  src="{{ printf "/mermaid-svg/%s-dark.svg"  $hash | absURL }}" alt="Mermaid diagram" loading="lazy">
+  <img class="mermaid-img mermaid-light" src="{{ printf "mermaid-svg/%s-light.svg" $hash | absURL }}" alt="Mermaid diagram" loading="lazy">
+  <img class="mermaid-img mermaid-dark"  src="{{ printf "mermaid-svg/%s-dark.svg"  $hash | absURL }}" alt="Mermaid diagram" loading="lazy">
 </figure>
 {{- else -}}
 <pre class="mermaid">{{- $body | safeHTML }}</pre>

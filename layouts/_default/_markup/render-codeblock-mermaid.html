@@ -1,2 +1,12 @@
-<pre class="mermaid">{{- .Inner | safeHTML }}</pre>
-{{ .Page.Store.Set "hasMermaid" true }}
+{{- $body := .Inner | strings.TrimSpace -}}
+{{- $hash := substr (md5 $body) 0 10 -}}
+{{- $lightFile := printf "static/mermaid-svg/%s-light.svg" $hash -}}
+{{- if fileExists $lightFile -}}
+<figure class="mermaid-figure">
+  <img class="mermaid-img mermaid-light" src="{{ printf "/mermaid-svg/%s-light.svg" $hash | absURL }}" alt="Mermaid diagram" loading="lazy">
+  <img class="mermaid-img mermaid-dark"  src="{{ printf "/mermaid-svg/%s-dark.svg"  $hash | absURL }}" alt="Mermaid diagram" loading="lazy">
+</figure>
+{{- else -}}
+<pre class="mermaid">{{- $body | safeHTML }}</pre>
+{{- .Page.Store.Set "hasMermaid" true -}}
+{{- end -}}

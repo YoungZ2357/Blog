@@ -1,10 +1,13 @@
 # render_mermaid.py
-# Replaces ```mermaid...``` fenced blocks in content/ with Hugo shortcode references,
-# and renders each unique diagram to static/mermaid-svg/{hash}-light.svg and {hash}-dark.svg
-# using mermaid-cli (mmdc).
+# Scans ```mermaid...``` fenced blocks in content/ and renders each unique diagram to
+# static/mermaid-svg/{hash}-light.svg and {hash}-dark.svg using mermaid-cli (mmdc).
 #
-# Run from the repo root in CI, BEFORE `hugo build`. Changes are made to the CI checkout
-# only and are never committed back to the repository.
+# Does NOT modify markdown files. The Hugo render hook at
+# layouts/_default/_markup/render-codeblock-mermaid.html computes the same hash at build
+# time and references the rendered SVG (falling back to <pre class="mermaid"> when the
+# SVG is missing, so local hugo server still works without running this script).
+#
+# Run from the repo root in CI, BEFORE `hugo build`.
 #
 # Requirements: mmdc (npm install -g @mermaid-js/mermaid-cli), Python 3.8+
 
@@ -68,26 +71,20 @@ def process_file(path: Path) -> None:
     if "```mermaid" not in content:
         return
 
-    def replace(m: re.Match) -> str:
+    for m in MERMAID_RE.finditer(content):
         body = m.group(1)
         if not body.strip():
             print(f"[SKIP] empty mermaid block in {path}")
-            return m.group(0)
+            continue
 
         h = block_hash(body)
         ok_light = render_svg(body, h, "light")
         ok_dark = render_svg(body, h, "dark")
 
         if ok_light and ok_dark:
-            return f'{{{{< mermaid-svg hash="{h}" >}}}}'
-
-        print(f"[SKIP] render failed for a block in {path}, keeping original")
-        return m.group(0)
-
-    new_content = MERMAID_RE.sub(replace, content)
-    if new_content != content:
-        path.write_text(new_content, encoding="utf-8")
-        print(f"[OK]   {path}")
+            print(f"[OK]   {path} -> {h}")
+        else:
+            print(f"[FAIL] {path} -> {h} (render hook will fall back to <pre>)")
 
 
 def main() -> None:

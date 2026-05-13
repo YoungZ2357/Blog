@@ -34,13 +34,15 @@
 </script>
 {{- end }}
 
-{{- /* DISABLED: mermaid pre-rendered as SVG in CI
-{{- if or .Params.mermaid .Site.Params.mermaid (.Page.Store.Get "hasMermaid") }}
-<!-- Mermaid -->
+{{- /* Mermaid JS fallback: only loaded when the render hook fell back to <pre class="mermaid">
+       (i.e. the pre-rendered SVG was missing — typically during local development before
+       running scripts/render_mermaid.py). In production CI builds all SVGs are generated
+       and this script is not emitted. */ -}}
+{{- if .Page.Store.Get "hasMermaid" }}
+<!-- Mermaid (fallback) -->
 <script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.2.3/mermaid.min.js"></script>
 <script>mermaid.initialize({ startOnLoad: true });</script>
 {{- end }}
-*/ -}}
 
 <!-- Konami / Blog unlock -->
 <script>

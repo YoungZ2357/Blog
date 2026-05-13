@@ -36,21 +36,23 @@ defaultContentLanguageInSubdir = false
       weight = 4
 
     [[languages.en.menu.main]]
+      name = "Harness Engineering"
+      parent = "Technical Writing"
+      url = "notes/harness-engineering/"
+      weight = 5
+
+    [[languages.en.menu.main]]
+      name = "Basics"
+      parent = "Harness Engineering"
+      url = "notes/harness-engineering/basics/"
+      weight = 1
+
+    [[languages.en.menu.main]]
       name = "Ideas"
       url = "ideas/"
       weight = 4
 
-    [[languages.en.menu.main]]
-      name = "ML Theory"
-      parent = "Math Foundations"
-      url = "notes/math-foundation/ml-theory/"
-      weight = 1
 
-    [[languages.en.menu.main]]
-      name = "Optimization Theory"
-      parent = "Math Foundations"
-      url = "notes/math-foundation/optimization/"
-      weight = 2
 
   [languages.zh]
     languageName = "中文"
@@ -81,21 +83,23 @@ defaultContentLanguageInSubdir = false
       weight = 4
 
     [[languages.zh.menu.main]]
+      name = "马鞍工程(LLM应用)"
+      parent = "技术写作"
+      url = "notes/harness-engineering/"
+      weight = 5
+
+    [[languages.zh.menu.main]]
+      name = "基础"
+      parent = "马鞍工程(LLM应用)"
+      url = "notes/harness-engineering/basics/"
+      weight = 1
+
+    [[languages.zh.menu.main]]
       name = "想法"
       url = "ideas/"
       weight = 4
 
-    [[languages.zh.menu.main]]
-      name = "机器学习理论基础"
-      parent = "数学基础"
-      url = "notes/math-foundation/ml-theory/"  # 移除 /zh/
-      weight = 1
 
-    [[languages.zh.menu.main]]
-      name = "优化理论"
-      parent = "数学基础"
-      url = "notes/math-foundation/optimization/"  # 移除 /zh/
-      weight = 2
 
 [markup.goldmark.extensions.passthrough]
   enable = true
@@ -104,6 +108,11 @@ defaultContentLanguageInSubdir = false
   block = [['$$', '$$'], ['\[', '\]']]
   inline = [['$', '$'], ['\(', '\)']]
 
+
+[markup.highlight]
+  style = "dracula"  # 或 monokai, onedark, github-dark 等
+  lineNos = false
+  noClasses = true
 
 
 [params]

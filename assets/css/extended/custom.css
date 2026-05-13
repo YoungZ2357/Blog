@@ -1,6 +1,6 @@
 /* 应用到代码块 (字体通过 extend_head.html 的 <link> 加载) */
 code,
-pre,
+pre:not(.mermaid),
 kbd,
 samp,
 tt {
@@ -14,7 +14,7 @@ tt {
   border-radius: 3px;
 }
 
-pre code {
+pre:not(.mermaid) code {
   font-family: 'JetBrains Mono', 'Courier New', Courier, monospace !important;
   font-size: 0.875rem;
   line-height: 1.6;
@@ -26,7 +26,7 @@ pre code {
 
 /* 启用连字 */
 code,
-pre code {
+pre:not(.mermaid) code {
   font-variant-ligatures: normal;
   font-feature-settings: "liga" 1, "calt" 1;
 }

@@ -34,14 +34,10 @@
 </script>
 {{- end }}
 
-{{- if or .Params.mermaid .Site.Params.mermaid }}
+{{- if or .Params.mermaid .Site.Params.mermaid (.Page.Store.Get "hasMermaid") }}
 <!-- Mermaid -->
-<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/mermaid/11.4.1/mermaid.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        mermaid.initialize({ startOnLoad: true });
-    });
-</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.2.3/mermaid.min.js"></script>
+<script>mermaid.initialize({ startOnLoad: true });</script>
 {{- end }}
 
 <!-- Konami / Blog unlock -->

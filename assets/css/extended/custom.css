@@ -30,3 +30,22 @@ pre:not(.mermaid) code {
   font-variant-ligatures: normal;
   font-feature-settings: "liga" 1, "calt" 1;
 }
+
+/* Mermaid pre-rendered SVG */
+.mermaid-figure {
+  display: block;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.mermaid-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-dark  { display: none; }
+.mermaid-light { display: block; margin: 0 auto; }
+
+/* PaperMod sets class="dark" on <html> for dark mode */
+.dark .mermaid-light { display: none; }
+.dark .mermaid-dark  { display: block; margin: 0 auto; }

@@ -175,7 +175,15 @@ graph.invoke({"messages": HumanMessage(content="Hello!")})
 ## 6. Chain：无条件边的固定路径图
 
 Chain 结构中，LLM 仅通过固定的路径运行，不存在条件边，即 LLM 的判定不会影响后续的运行（如工具调用、后续 Workflow 等）。
-{{< mermaid-svg hash="ff974a7399" >}}
+```mermaid
+flowchart LR
+A[START]
+B[tool\_calling\_llm]
+C[END]
+
+A -->B
+B --> C
+```
 
 ```python
 def tool_calling_llm(state: State):

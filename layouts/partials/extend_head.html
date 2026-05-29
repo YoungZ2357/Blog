@@ -34,14 +34,32 @@
 </script>
 {{- end }}
 
-{{- /* Mermaid JS fallback: only loaded when the render hook fell back to <pre class="mermaid">
-       (i.e. the pre-rendered SVG was missing — typically during local development before
-       running scripts/render_mermaid.py). In production CI builds all SVGs are generated
-       and this script is not emitted. */ -}}
+{{- /* Mermaid: rendered client-side on pages that contain a ```mermaid block.
+       Theme follows PaperMod's html[data-theme] and re-renders on toggle. */ -}}
 {{- if .Page.Store.Get "hasMermaid" }}
-<!-- Mermaid (fallback) -->
-<script src="https://cdn.bootcdn.net/ajax/libs/mermaid/10.2.3/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });</script>
+<!-- Mermaid -->
+<script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+
+    const pickTheme = () =>
+        document.documentElement.dataset.theme === "dark" ? "dark" : "default";
+
+    const render = async () => {
+        const blocks = document.querySelectorAll("pre.mermaid");
+        blocks.forEach((el) => {
+            if (!el.dataset.source) el.dataset.source = el.textContent;
+            el.removeAttribute("data-processed");
+            el.innerHTML = el.dataset.source;
+        });
+        mermaid.initialize({ startOnLoad: false, theme: pickTheme() });
+        await mermaid.run({ nodes: blocks });
+    };
+
+    document.addEventListener("DOMContentLoaded", render);
+
+    const toggle = document.getElementById("theme-toggle");
+    if (toggle) toggle.addEventListener("click", () => setTimeout(render, 0));
+</script>
 {{- end }}
 
 <!-- Konami / Blog unlock -->

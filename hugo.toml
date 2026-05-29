@@ -47,6 +47,12 @@ defaultContentLanguageInSubdir = false
       url = "notes/harness-engineering/basics/"
       weight = 1
 
+    [[languages.zh.menu.main]]
+      name = "State and Memory"
+      parent = "Harness Engineering"
+      url = "notes/harness-engineering/state-and-memory/"
+      weight = 1
+
     [[languages.en.menu.main]]
       name = "Ideas"
       url = "ideas/"
@@ -83,15 +89,21 @@ defaultContentLanguageInSubdir = false
       weight = 4
 
     [[languages.zh.menu.main]]
-      name = "马鞍工程(LLM应用)"
+      name = "Harness Engineering"
       parent = "技术写作"
       url = "notes/harness-engineering/"
       weight = 5
 
     [[languages.zh.menu.main]]
       name = "基础"
-      parent = "马鞍工程(LLM应用)"
+      parent = "Harness Engineering"
       url = "notes/harness-engineering/basics/"
+      weight = 1
+    
+    [[languages.zh.menu.main]]
+      name = "状态与记忆"
+      parent = "Harness Engineering"
+      url = "notes/harness-engineering/state-and-memory/"
       weight = 1
 
     [[languages.zh.menu.main]]

@@ -5,7 +5,7 @@ theme = "PaperMod"
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false 
-
+timeZone = "Asia/Shanghai"
 [languages]
   [languages.en]
     languageName = "English"
